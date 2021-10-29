@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    tools:context=".activities.MainActivity">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:src="@drawable/intro"
+        android:scaleType="centerCrop"
+        android:layout_marginHorizontal="@dimen/margin_medium_2"
+        android:padding="@dimen/margin_medium_3"
+        android:layout_marginBottom="230dp"/>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="20dp"
+        android:layout_alignParentBottom="true"
+        app:cardBackgroundColor="@color/red_400">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_margin="15dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Happy Meals"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:textColor="@color/white"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Discover the best food from over 1000 restaurants"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/white"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnGetStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/white"
+                android:background="@drawable/rounded_button_white"
+                android:textStyle="bold"
+                android:text="GET STARTED"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
