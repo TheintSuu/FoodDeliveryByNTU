@@ -3,13 +3,38 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Theint Su Htwe/.gradle/caches/transforms-3/10404401d97e8cb55ca927d543274ff6/transformed/jetified-play-services-base-17.1.0/res/drawable/common_google_signin_btn_icon_dark.xml" value="0.2046875" />
+        <entry key="..\:/Users/Theint Su Htwe/AndroidStudioProjects/FoodDelivery/app/src/main/res/drawable/button_background.xml" value="0.1" />
+        <entry key="..\:/Users/Theint Su Htwe/AndroidStudioProjects/FoodDelivery/app/src/main/res/drawable/circle_background_white.xml" value="0.11354166666666667" />
+        <entry key="..\:/Users/Theint Su Htwe/AndroidStudioProjects/FoodDelivery/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.1" />
+        <entry key="..\:/Users/Theint Su Htwe/AndroidStudioProjects/FoodDelivery/app/src/main/res/drawable/ic_baseline_article_24.xml" value="0.1" />
+        <entry key="..\:/Users/Theint Su Htwe/AndroidStudioProjects/FoodDelivery/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.1" />
+        <entry key="..\:/Users/Theint Su Htwe/AndroidStudioProjects/FoodDelivery/app/src/main/res/drawable/ic_baseline_restaurant_24.xml" value="0.1" />
         <entry key="..\:/Users/Theint Su Htwe/AndroidStudioProjects/FoodDelivery/app/src/main/res/drawable/press_item.xml" value="0.13703703703703704" />
         <entry key="..\:/Users/Theint Su Htwe/AndroidStudioProjects/FoodDelivery/app/src/main/res/drawable/rounded_button.xml" value="0.13333333333333333" />
         <entry key="..\:/Users/Theint Su Htwe/AndroidStudioProjects/FoodDelivery/app/src/main/res/drawable/rounded_button_white.xml" value="0.13333333333333333" />
         <entry key="..\:/Users/Theint Su Htwe/AndroidStudioProjects/FoodDelivery/app/src/main/res/drawable/tab_selected_color.xml" value="0.13333333333333333" />
+        <entry key="..\:/Users/Theint Su Htwe/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/activity_check_out_actvity.xml" value="0.11875" />
         <entry key="..\:/Users/Theint Su Htwe/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/activity_login.xml" value="0.134375" />
         <entry key="..\:/Users/Theint Su Htwe/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/activity_main.xml" value="0.14322916666666666" />
         <entry key="..\:/Users/Theint Su Htwe/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/activity_register.xml" value="0.134375" />
+        <entry key="..\:/Users/Theint Su Htwe/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/activity_restartuant_detail.xml" value="0.1" />
+        <entry key="..\:/Users/Theint Su Htwe/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/checkout_success_layout.xml" value="0.13177083333333334" />
+        <entry key="..\:/Users/Theint Su Htwe/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/content_scrolling.xml" value="0.13177083333333334" />
+        <entry key="..\:/Users/Theint Su Htwe/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/fragment_account.xml" value="0.1" />
+        <entry key="..\:/Users/Theint Su Htwe/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/fragment_activity.xml" value="0.1" />
+        <entry key="..\:/Users/Theint Su Htwe/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/fragment_profile.xml" value="0.3881932021466905" />
+        <entry key="..\:/Users/Theint Su Htwe/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/fragment_restartuant.xml" value="0.1" />
+        <entry key="..\:/Users/Theint Su Htwe/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/search_box_layout.xml" value="0.1" />
+        <entry key="..\:/Users/Theint Su Htwe/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/view_holder_activity.xml" value="0.1" />
+        <entry key="..\:/Users/Theint Su Htwe/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/view_holder_category_item.xml" value="0.5" />
+        <entry key="..\:/Users/Theint Su Htwe/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/view_holder_popular_choice.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/Theint Su Htwe/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/view_holder_popular_choice_detail_layout.xml" value="0.11145833333333334" />
+        <entry key="..\:/Users/Theint Su Htwe/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/view_holder_popular_rest.xml" value="0.17252396166134185" />
+        <entry key="..\:/Users/Theint Su Htwe/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/view_holder_restaurant_horizontal_viewtype.xml" value="0.1" />
+        <entry key="..\:/Users/Theint Su Htwe/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/view_holder_restaurant_vertical_viewtype.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/Theint Su Htwe/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/view_pod_empty.xml" value="0.22" />
+        <entry key="..\:/Users/Theint Su Htwe/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/viewholder_detail_fooditem_layout.xml" value="0.33" />
         <entry key="..\:/Users/Theint Su Htwe/AndroidStudioProjects/FoodDelivery/app/src/main/res/menu/nav_menu.xml" value="0.14322916666666666" />
       </map>
     </option>

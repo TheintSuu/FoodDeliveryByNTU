@@ -1,9 +1,9 @@
-package com.ci6222.fooddelivery.data.vos
+package com.ci6222.fooddelivery.datas.vos
 
-class ShopVO(
+class RestaurantVO(
         var id: String?= "",
         var description: String? = "",
-        var imgUrl: String? = "",
+        var image_Url: String? = "",
         var name: String? = "",
         var rating: String? = ""
 )

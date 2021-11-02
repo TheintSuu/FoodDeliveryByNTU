@@ -6,8 +6,9 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import com.ci6222.fooddelivery.R
-import com.ci6222.fooddelivery.fragment.ProfileFragment
-import com.ci6222.fooddelivery.fragment.RestartuantFragment
+import com.ci6222.fooddelivery.fragments.ActivityFragment
+import com.ci6222.fooddelivery.fragments.ProfileFragment
+import com.ci6222.fooddelivery.fragments.RestaurantFragment
 import com.ci6222.fooddelivery.utilities.FRAGMENT_Home
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
@@ -23,7 +24,7 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        callFragment(RestartuantFragment.newInstance("a", "b"))
+        callFragment(RestaurantFragment.newInstance("a", "b"))
         setUpBottomNavigation()
     }
 
@@ -33,7 +34,11 @@ class MainActivity : BaseActivity() {
             override fun onNavigationItemSelected(item: MenuItem): Boolean {
                 when (item.itemId) {
                     R.id.nav_home -> {
-                        callFragment(RestartuantFragment.newInstance("a", "b"))
+                        callFragment(RestaurantFragment.newInstance("a", "b"))
+                        return true
+                    }
+                    R.id.nav_order -> {
+                        callFragment(ActivityFragment.newInstance("a", "b"))
                         return true
                     }
 

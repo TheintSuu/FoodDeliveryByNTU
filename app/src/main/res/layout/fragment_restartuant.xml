@@ -1,14 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.RestartuantFragment">
+    android:background="@color/grey_100"
+    tools:context=".fragments.RestaurantFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@color/grey_100"
+        android:orientation="vertical">
 
-</FrameLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/location_layout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/grey_900"
+                android:text="Current Location To"
+                android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+        </LinearLayout>
+        <include layout="@layout/search_box_layout" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:padding="@dimen/margin_medium"
+            android:paddingBottom="@dimen/margin_medium_2">
+
+            <TextView
+                android:id="@+id/tvUserWelcome"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@id/ivMenu"
+                android:gravity="bottom"
+                android:paddingLeft="@dimen/margin_medium_2"
+                android:text="Delivering To"
+                android:layout_above="@id/tvWelcome"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvWelcome"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:paddingTop="@dimen/margin_medium"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/margin_medium"
+                android:layout_toLeftOf="@id/ivMenu"
+                android:paddingLeft="@dimen/margin_medium_2"
+                android:text="There are several shops in your area delivering"
+                android:textColor="@color/black"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+            <ImageView
+                android:id="@+id/ivMenu"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="@dimen/margin_medium_2"
+                android:textColor="@color/grey_900"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/breakfast"
+                android:scaleType="fitXY"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+
+        </RelativeLayout>
+        <include layout="@layout/popular_choice_title_layout" android:id="@+id/ly_popular" android:visibility="gone"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@color/emptyViewColor"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/rc_popular_choice"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:visibility="gone"
+            android:background="@color/emptyViewColor"
+            android:id="@+id/rc_category"/>
+
+        <include layout="@layout/restaurent_title_layout" android:id="@+id/ly_restaurant" android:visibility="gone"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="60dp"
+            android:id="@+id/rc_restaurants"/>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,10 +1,10 @@
-package com.ci6222.fooddelivery.data.vos
+package com.ci6222.fooddelivery.datas.vos
 
 import com.google.firebase.firestore.IgnoreExtraProperties
 
 @IgnoreExtraProperties
 class CategoryVO(
-        var id: String?= "",
-        var name: String? = "",
-        var image: String? = ""
+        var category_id: String?= "",
+        var category_name: String? = "",
+        var category_image: String? = ""
 )

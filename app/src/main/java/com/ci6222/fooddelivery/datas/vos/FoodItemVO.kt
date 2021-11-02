@@ -1,15 +1,15 @@
-package com.ci6222.fooddelivery.data.vos
+package com.ci6222.fooddelivery.datas.vos
 
 import com.google.firebase.firestore.IgnoreExtraProperties
 
 @IgnoreExtraProperties
 class FoodItemVO(
-        var name: String?= "",
-        var description: String? = "",
-        var price: Long = 0,
-        var rating: String? = "",
-        var imgurl: String? = "",
+        var food_name: String?= "",
+        var food_description: String? = "",
+        var food_price: Long = 0,
+        var food_rating: String? = "",
+        var food_image: String? = "",
         var popular: Boolean = false,
-        var count: Long =1,
-        var totalAmount: Long =0
+        var itemCount: Long = 1,
+        var totalAmount: Long = 0
 )

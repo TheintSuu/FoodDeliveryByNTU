@@ -578,7 +578,7 @@
         <!--    <color name="category_3">#e8d1e5</color>-->
         <color name="emptyView_Btn_1">#b5dbf7</color>
         <color name="progressBarColor">#bae2fe</color>
-        <color name="textColorTertray">#979797</color>
+        <color name="textColorTertray">#E7DDDD</color>
         <color name="emptyViewColor">#DDE1E5</color>
 
     </resources>

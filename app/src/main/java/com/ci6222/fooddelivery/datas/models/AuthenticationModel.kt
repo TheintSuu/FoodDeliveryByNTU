@@ -1,36 +1,38 @@
-package com.ci6222.fooddelivery.data.models
+package com.ci6222.fooddelivery.datas.models
 
 import android.graphics.Bitmap
-import com.ci6222.fooddelivery.data.vos.UserVO
+import com.ci6222.fooddelivery.datas.vos.UserVO
 import com.ci6222.fooddelivery.network.auth.AuthManager
 
 
 interface AuthenticationModel {
-    var mAuthManager: AuthManager
 
+    var mAuthManager: AuthManager
 
     fun login(email: String, password: String, onSuccess: () -> Unit, onFailure: (String) -> Unit)
 
     fun register(
-            userName: String,
+        username: String,
         email: String,
         password: String,
         phone: String,
         onSuccess: () -> Unit,
         onFailure: (String) -> Unit
     )
+    fun userData(
+        onSuccess: (userVO : UserVO) -> Unit,
+        onFailure: (String) -> Unit
+    )
 
-    fun getUserName(): String
-
-    fun getUserProfile(  ) : UserVO
-
-    fun uploadPhotoUrl(  photoUrl : Bitmap,
-                         onSuccess: (String) -> Unit,
-                         onFailure: (String) -> Unit)
+    fun userDataByEmail( email : String,
+        onSuccess: (userVO : UserVO) -> Unit,
+        onFailure: (String) -> Unit
+    )
 
     fun updateProfile(
-            photoUrl : String,
-            onSuccess: () -> Unit,
-            onFailure: (String) -> Unit
+        photoUrl : String,
+        onSuccess: () -> Unit,
+        onFailure: (String) -> Unit
     )
+
 }

@@ -97,6 +97,7 @@ dependencies {
     implementation rootProject.ext.libraries.exoplayer_ui
 
     //Testing
+
     // Local Unit Tests
     testImplementation rootProject.ext.libraries.junit
     testImplementation rootProject.ext.libraries.junitktx
@@ -128,6 +129,7 @@ dependencies {
     implementation rootProject.ext.libraries.firebaseInAppMessageKtx
     implementation rootProject.ext.libraries.firebaseCrashlyticsKtx
     implementation rootProject.ext.libraries.firebaseMessageKtx
+    implementation 'com.google.firebase:firebase-messaging:20.2.4'
 
 
     implementation 'com.google.android.material:material:1.1.0'
@@ -139,14 +141,11 @@ dependencies {
 
     //Glide
     implementation rootProject.ext.libraries.glide
-    
 
     // Import the BoM for the Firebase platform
     implementation platform(rootProject.ext.libraries.firebaseBom)
     implementation rootProject.ext.libraries.firebaseAuthKtx
     implementation rootProject.ext.libraries.firebaseAnalytics
-
-
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }

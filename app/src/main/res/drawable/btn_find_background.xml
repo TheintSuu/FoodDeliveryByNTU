@@ -1,0 +1,10 @@
+<shape android:shape="rectangle"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <solid
+        android:color="@color/emptyView_Btn_1"/>
+
+    <corners
+        android:radius="@dimen/margin_medium_2"/>
+
+</shape>

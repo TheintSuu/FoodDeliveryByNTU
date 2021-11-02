@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="135dp"
+    android:paddingVertical="@dimen/margin_medium"
+    android:paddingHorizontal="@dimen/margin_medium"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/ivPodcastImage"
+        android:layout_width="120dp"
+        android:layout_height="115dp"
+        android:layout_marginRight="@dimen/margin_medium"
+        android:paddingHorizontal="@dimen/margin_medium"
+        android:paddingTop="@dimen/margin_medium"
+        android:scaleType="centerCrop"
+        android:src="@drawable/placeholder" />
+
+    <RelativeLayout
+        android:id="@+id/podcastLayout"
+        android:layout_width="match_parent"
+        android:layout_toEndOf="@id/ivPodcastImage"
+        android:paddingTop="@dimen/margin_card_medium"
+        android:paddingRight="12dp"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/tvPodCastTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:layout_toLeftOf="@id/tvPodCasCategory"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:paddingRight="@dimen/margin_medium_2"
+            android:textStyle="bold"
+            android:text="Women n Technology Podcast, hosted by Espree Devora"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/text_regular_2x" />
+
+        <TextView
+            android:id="@+id/tvPodCasCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/tvPodCastTitle"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/button_background"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="@dimen/margin_small"
+            android:text="Art &amp; Design"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/tvPodCastTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvPodCastTitle"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:paddingRight="@dimen/margin_medium"
+            android:text="time "
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_regular"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/tvPodCastHighLight"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvPodCastTime"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:paddingRight="@dimen/margin_medium"
+            android:text="Reorder "
+            android:textColor="@color/red_400"
+            android:textSize="@dimen/text_regular"
+            android:textStyle="bold" />
+
+
+        <ImageView
+            android:id="@+id/ivDetail"
+            android:layout_width="wrap_content"
+            android:layout_below="@id/tvPodCastTime"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/tvPodCastHighLight"
+            android:layout_toRightOf="@id/tvPodCastHighLight"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_baseline_arrow_right_alt_24"/>
+
+
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

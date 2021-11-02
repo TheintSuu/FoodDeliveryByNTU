@@ -3,9 +3,7 @@ package com.ci6222.fooddelivery.network
 import android.content.ContentValues
 import android.graphics.Bitmap
 import android.util.Log
-import com.ci6222.fooddelivery.data.vos.CategoryVO
-import com.ci6222.fooddelivery.data.vos.FoodItemVO
-import com.ci6222.fooddelivery.data.vos.ShopVO
+import com.ci6222.fooddelivery.datas.vos.*
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
@@ -13,164 +11,60 @@ import com.google.gson.Gson
 import java.io.ByteArrayOutputStream
 import java.util.*
 
+
 object CloudFirestoreFirebaseApiImpl : FirebaseApi {
 
     val db = Firebase.firestore
     private val storage = FirebaseStorage.getInstance()
     val storageReference = storage.reference
-
-
-    override fun getCategory(
-        onSuccess: (groceries: List<CategoryVO>) -> Unit,
+    override fun addUser(
+        user: UserVO,
+        onSuccess: (documentId: String) -> Unit,
         onFialure: (String) -> Unit
     ) {
-        db.collection("Category")
+        val id =  UUID.randomUUID().toString()
+        user.id = id
+        db.collection("users")
+            .document(id)
+            .set(user)
+            .addOnSuccessListener { Log.d("Success", "Successfully") }
+            .addOnFailureListener { Log.d("Failure", "Failed ") }
+    }
+
+    override fun getUserByEmail(
+        email: String,
+        onSuccess: (documentId: String) -> Unit,
+        onFialure: (String) -> Unit
+    ) {
+        db.collection("users").whereEqualTo("email", email)
             .addSnapshotListener { value, error ->
                 error?.let {
-                    onFialure(it.message ?: "Please check connection")
-                } ?: run{
-                    val categoryList: MutableList<CategoryVO> = arrayListOf()
+                   onFialure(it.message ?: "Please check connection")
+                } ?: run {
+
 
                     val result = value?.documents ?: arrayListOf()
 
-                    for (document in result) {
-                        val data = document.data
-                        val category = CategoryVO()
-                        category.name = data?.get("name") as String
-                        category.id = (data["id"] as Long ).toString()
-                        category.image= data["image"] as String
-                        categoryList.add(category)
+                    if(result.isNotEmpty()) {
+                        val data = result?.first().data
+                        val hashmap = result?.first().data
+                        hashmap?.put("id", result?.first().id.toString())
+                        val Data = Gson().toJson(hashmap)
+                        var docuID : String =  ""
+                        val docsData = Gson().fromJson<UserVO>(Data, UserVO::class.java)
+                        docuID = docsData.id.toString()
+                        onSuccess(docuID)
                     }
-                    onSuccess(categoryList)
+
+
+
                 }
-            }
 
-    }
-
-    override fun getRestaurants(
-        onSuccess: (groceries: List<ShopVO>) -> Unit,
-        onFialure: (String) -> Unit
-    ) {
-        CloudFirestoreFirebaseApiImpl.db.collection("Restaurant")
-            .addSnapshotListener { value, error ->
-                error?.let {
-                    onFialure(it.message ?: "Please check connection")
-                } ?: run{
-                    val restaurantsList: MutableList<ShopVO> = arrayListOf()
-
-                    val result = value?.documents ?: arrayListOf()
-
-                    for (document in result) {
-                        val data = document.data
-                        val restaurant = ShopVO()
-                        restaurant.name = data?.get("name") as String
-                        restaurant.id = (data["id"] as Long ).toString()
-                        restaurant.description = data["description"] as String
-                        restaurant.rating= data["rating"] as  String
-                        restaurant.imgUrl = data["image"] as String?
-                        restaurantsList.add(restaurant)
-                    }
-                    onSuccess(restaurantsList)
-                }
             }
     }
 
-    override fun getPopularFoodItemList(onSuccess: (groceries: List<FoodItemVO>) -> Unit, onFialure: (String) -> Unit) {
-        CloudFirestoreFirebaseApiImpl.db.collection("foodItems")
-                .addSnapshotListener { value, error ->
-                    error?.let {
-                        onFialure(it.message ?: "Please check connection")
-                    } ?: run{
-                        val foodItemList: MutableList<FoodItemVO> = arrayListOf()
 
-                        val result = value?.documents ?: arrayListOf()
-
-                        for (document in result) {
-                            val data = document.data
-                            val foodItemVO = FoodItemVO()
-                            foodItemVO.name = data?.get("name") as String
-                            foodItemVO.description = data["description"] as String
-                            foodItemVO.rating= data["rating"] as  String
-                            foodItemVO.price = ( data["price"]  as Long )
-                            foodItemVO.count = ( data["count"]  as Long )
-                            foodItemVO.imgurl = data["imgUrl"] as String?
-                            foodItemList.add(foodItemVO)
-                        }
-                        onSuccess(foodItemList)
-                    }
-                }
-    }
-
-
-    override fun getDetailFoodList(shopId: String, onSuccess: (groceries: List<FoodItemVO>, ShopVO) -> Unit, onFialure: (String) -> Unit) {
-        var restaurant:ShopVO  =ShopVO()
-        db.collection("Restaurant").document(shopId)
-                .addSnapshotListener { value, error ->
-                    error?.let {
-                        onFialure(it.message ?: "Please check connection")
-                    } ?: run{
-
-                        val data = value?.data
-                        val ShopVO =ShopVO()
-                       ShopVO.name = data?.get("name") as String
-                       ShopVO.description = data["description"] as String?
-                       ShopVO.imgUrl = data["imgurl"] as String?
-                       ShopVO.rating = data["rating"] as String?
-
-                        restaurant =ShopVO
-                    }
-                }
-
-        db.collection("Restaurants/${shopId}/foodItems")
-                .addSnapshotListener { value, error ->
-                    error?.let {
-                        onFialure(it.message ?: "Please check connection")
-                    } ?: run{
-
-                        val foodList: MutableList<FoodItemVO> = arrayListOf()
-
-                        val result = value?.documents ?: arrayListOf()
-
-                        for (document in result) {
-                            val hashmap = document.data
-                            hashmap?.put("id", document.id.toString())
-                            val Data = Gson().toJson(hashmap)
-                            val docsData = Gson().fromJson<FoodItemVO>(Data, FoodItemVO::class.java)
-                            foodList.add(docsData)
-                        }
-                        onSuccess(foodList ,restaurant)
-                    }
-                }
-
-    }
-
-    override fun addCheckoutItem(
-        onSuccess: (groceries: List<FoodItemVO>) -> Unit,
-        onFialure: (String) -> Unit
-    ) {
-//        db.collection("")
-//            .document(name)
-//            .set(groceryMap)
-//            .addOnSuccessListener { Log.d("Success", "Successfully added grocery") }
-//            .addOnFailureListener { Log.d("Failure", "Failed to add grocery") }
-    }
-
-    override fun UpadateCheckoutItem(
-        onSuccess: (groceries: List<FoodItemVO>) -> Unit,
-        onFialure: (String) -> Unit
-    ) {
-
-    }
-
-    override fun addFoodItem(foodItemVO: FoodItemVO) {
-        db.collection("orders")
-                .document(foodItemVO?.name.toString())
-                .set(foodItemVO)
-                .addOnSuccessListener { Log.d("Success", "Successfully added grocery") }
-                .addOnFailureListener { Log.d("Failure", "Failed to add grocery") }
-    }
-
-    override fun uploadProfileImage(image: Bitmap,onSuccess: (photoUrl : String) -> Unit, onFailure: (String) -> Unit) {
+    override fun uploadPhotoToFirebaseStorage(image: Bitmap, onSuccess: (photoUrl : String) -> Unit, onFailure: (String) -> Unit) {
         val baos = ByteArrayOutputStream()
         image.compress(Bitmap.CompressFormat.JPEG, 100, baos)
         val data = baos.toByteArray()
@@ -193,46 +87,260 @@ object CloudFirestoreFirebaseApiImpl : FirebaseApi {
 
     }
 
-    override fun getCartFoodItemCount(onSuccess: (count: Long) -> Unit, onFialure: (String) -> Unit) {
-        db.collection("orders")
-                .addSnapshotListener { value, error ->
-                    error?.let {
-                        onFialure(it.message ?: "Please check connection")
-                    } ?: run{
-                        val result = value?.documents ?: arrayListOf()
-                        onSuccess(result.size.toLong())
+    override fun getCategories(onSuccess: (groceries: List<CategoryVO>) -> Unit, onFialure: (String) -> Unit) {
+
+        db.collection("Category")
+            .addSnapshotListener { value, error ->
+                error?.let {
+                    onFialure(it.message ?: "Please check connection")
+                } ?: run{
+
+                    val categoryList: MutableList<CategoryVO> = arrayListOf()
+
+                    val result = value?.documents ?: arrayListOf()
+
+                    for (document in result) {
+                        val hashmap = document.data
+                        hashmap?.put("id", document.id.toString())
+                        val Data = Gson().toJson(hashmap)
+                        val docsData = Gson().fromJson<CategoryVO>(Data, CategoryVO::class.java)
+                        categoryList.add(docsData)
                     }
+
+                    onSuccess(categoryList)
                 }
+            }
+
     }
 
-    override fun getTotalPrice(onSuccess: (count: Long) -> Unit, onFialure: (String) -> Unit) {
-        db.collection("orders")
-                .addSnapshotListener { value, error ->
-                    error?.let {
-                        onFialure(it.message ?: "Please check connection")
-                    } ?: run{
-                        val result = value?.documents ?: arrayListOf()
+    override fun getRestaurants(onSuccess: (restaurants: List<RestaurantVO>) -> Unit, onFialure: (String) -> Unit) {
+        db.collection("restaurants")
+            .addSnapshotListener { value, error ->
+                error?.let {
+                    onFialure(it.message ?: "Please check connection")
+                } ?: run{
 
+                    val restaurantList: MutableList<RestaurantVO> = arrayListOf()
 
-                        val orderList: MutableList<FoodItemVO> = arrayListOf()
+                    val result = value?.documents ?: arrayListOf()
 
-                        for (document in result) {
-                            val orderData = document.data
-
-                            orderData?.put("id", document.id.toString())
-                            val Data = Gson().toJson(orderData)
-                            val docsData = Gson().fromJson<FoodItemVO>(Data, FoodItemVO::class.java)
-                            orderList.add(docsData)
-                        }
-                        var totalAmount : Long =0
-
-                        orderList.forEach {
-                            totalAmount += it.price
-                        }
-
-                        onSuccess(totalAmount)
+                    for (document in result) {
+                        val hashmap = document.data
+                        hashmap?.put("id", document.id.toString())
+                        val Data = Gson().toJson(hashmap)
+                        val docsData = Gson().fromJson<RestaurantVO>(Data, RestaurantVO::class.java)
+                        restaurantList.add(docsData)
                     }
+
+                    onSuccess(restaurantList)
                 }
+            }
     }
+
+    override fun getOrderActivities(
+        userId: String,
+        onSuccess: (restaurants: List<ActivityVO>) -> Unit,
+        onFialure: (String) -> Unit
+    ) {
+        db.collection("users/${userId}/recentOrders")
+            .addSnapshotListener { value, error ->
+                error?.let {
+                    onFialure(it.message ?: "Please check connection")
+                } ?: run{
+
+                    val categoryList: MutableList<ActivityVO> = arrayListOf()
+
+                    val result = value?.documents ?: arrayListOf()
+
+                    for (document in result) {
+                        val hashmap = document.data
+                        hashmap?.put("id", document.id.toString())
+                        val Data = Gson().toJson(hashmap)
+                        val docsData = Gson().fromJson<ActivityVO>(Data, ActivityVO::class.java)
+                        categoryList.add(docsData)
+                    }
+
+                    onSuccess(categoryList)
+                }
+            }
+    }
+
+
+    override fun getFoodItems(
+        documentId: String,
+        onSuccess: (foodList: List<FoodItemVO>, restaurantVO : RestaurantVO) -> Unit,
+        onFialure: (String) -> Unit
+    ) {
+        var restaurant: RestaurantVO  = RestaurantVO()
+        var foodList: MutableList<FoodItemVO> = arrayListOf()
+        var list : ArrayList<FoodItemVO> = arrayListOf()
+        db.collection("restaurants").document(documentId)
+            .addSnapshotListener { value, error ->
+                error?.let {
+                    onFialure(it.message ?: "Please check connection")
+                } ?: run{
+
+                    val data = value?.data
+                    val restaurantVO = RestaurantVO()
+                    restaurantVO.name = data?.get("name") as String
+                    restaurantVO.description = data["description"] as String?
+                    restaurantVO.image_Url = data["image_Url"] as String?
+                    restaurantVO.rating = data["rating"] as String?
+
+
+                    restaurant = restaurantVO
+
+
+                }
+            }
+
+
+        db.collection("restaurants/${documentId}/fooditems")
+            .addSnapshotListener { value, error ->
+                error?.let {
+                    onFialure(it.message ?: "Please check connection")
+                } ?: run{
+
+                    val foodList: MutableList<FoodItemVO> = arrayListOf()
+
+                    val result = value?.documents ?: arrayListOf()
+
+                    for (document in result) {
+                        val hashmap = document.data
+                        hashmap?.put("id", document.id.toString())
+                        val Data = Gson().toJson(hashmap)
+                        val docsData = Gson().fromJson<FoodItemVO>(Data, FoodItemVO::class.java)
+                        foodList.add(docsData)
+                    }
+                    onSuccess(foodList ,restaurant)
+                }
+            }
+    }
+
+    override fun getPopularChoiceList(
+        onSuccess: (restaurants: List<FoodItemVO>) -> Unit,
+        onFialure: (String) -> Unit
+    ) {
+        db.collectionGroup("fooditems").whereEqualTo("popular","1")
+            .addSnapshotListener { value, error ->
+                error?.let {
+                    onFialure(it.message ?: "Please check connection")
+                } ?: run{
+
+                    val popularList: MutableList<FoodItemVO> = arrayListOf()
+
+                    val result = value?.documents ?: arrayListOf()
+
+                    for (document in result) {
+                        val hashmap = document.data
+                        hashmap?.put("id", document.id.toString())
+                        val Data = Gson().toJson(hashmap)
+                        val docsData = Gson().fromJson<FoodItemVO>(Data, FoodItemVO::class.java)
+                        popularList.add(docsData)
+                    }
+
+                    onSuccess(popularList)
+                }
+            }
+    }
+
+    override fun getOrderList(onSuccess: (restaurants: List<FoodItemVO>) -> Unit, onFialure: (String) -> Unit) {
+        db.collection("orders")
+            .addSnapshotListener { value, error ->
+                error?.let {
+                    onFialure(it.message ?: "Please check connection")
+                } ?: run{
+
+                    val orderList: MutableList<FoodItemVO> = arrayListOf()
+
+                    val result = value?.documents ?: arrayListOf()
+
+                    for (document in result) {
+                        val hashmap = document.data
+                        hashmap?.put("id", document.id.toString())
+                        val Data = Gson().toJson(hashmap)
+                        val docsData = Gson().fromJson<FoodItemVO>(Data, FoodItemVO::class.java)
+                        orderList.add(docsData)
+                    }
+
+                    onSuccess(orderList)
+                }
+            }
+    }
+
+    override fun addOrUpdateFoodItem(foodItemVO: FoodItemVO) {
+
+        db.collection("orders")
+            .document(foodItemVO.food_name.toString())
+            .set(foodItemVO)
+            .addOnSuccessListener { Log.d("Success", "Successfully added grocery") }
+            .addOnFailureListener { Log.d("Failure", "Failed to add grocery") }
+
+    }
+
+    override fun addOrderByUser(
+        userId: String,
+        order: ActivityVO,
+        onSuccess: (String) -> Unit,
+        onFialure: (String) -> Unit
+    ) {
+
+        val id = UUID.randomUUID().toString()
+
+        db.collection("users/$userId/recentOrders")
+            .document(id)
+            .set(order)
+            .addOnSuccessListener { Log.d("Success", "Successfully Added Order ") }
+            .addOnFailureListener { Log.d("Failure", "Failed") }
+    }
+
+    override fun deleteFoodItem(id: String) {
+
+        db.collection("orders")
+            .document(id)
+            .delete()
+            .addOnSuccessListener { Log.d("Success", "Successfully deleted grocery") }
+            .addOnFailureListener { Log.d("Failure", "Failed to delete grocery") }
+
+    }
+
+    override fun getCartItemCount(onSuccess: (cartCount: Long) -> Unit, onFialure: (String) -> Unit) {
+        db.collection("orders")
+            .addSnapshotListener { value, error ->
+                error?.let {
+                    onFialure(it.message ?: "Please check connection")
+                } ?: run{
+                    val result = value?.documents ?: arrayListOf()
+                    onSuccess(result.size.toLong())
+                }
+            }
+    }
+
+    override fun getTotalPrice(onSuccess: (cartCount: Long) -> Unit, onFialure: (String) -> Unit) {
+        db.collection("orders")
+            .addSnapshotListener { value, error ->
+                error?.let {
+                    onFialure(it.message ?: "Please check connection")
+                } ?: run{
+                    val result = value?.documents ?: arrayListOf()
+                    val orderList: MutableList<FoodItemVO> = arrayListOf()
+
+                    for (document in result) {
+                        val hashmap = document.data
+                        hashmap?.put("id", document.id.toString())
+                        val Data = Gson().toJson(hashmap)
+                        val docsData = Gson().fromJson<FoodItemVO>(Data, FoodItemVO::class.java)
+                        orderList.add(docsData)
+                    }
+                    var totalAmount : Long =0
+                    for(entity in orderList)
+                    {
+                        totalAmount += entity.totalAmount
+                    }
+                    onSuccess(totalAmount)
+                }
+            }
+    }
+
 
 }

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ci6222.fooddelivery.viewholders.EmptyViewPod
+    layout_width="match_parent"
+    layout_height="match_partent" xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:padding="@dimen/margin_medium_2"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent">
+
+<!--    <View-->
+<!--        android:id="@+id/viewTransparant"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="135dp"-->
+<!--        android:background="@color/emptyViewColor" />-->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        app:cardCornerRadius="@dimen/margin_xlarge"
+        app:cardBackgroundColor="#fff"
+        app:cardElevation="@dimen/margin_small"
+        android:layout_marginHorizontal="@dimen/margin_medium"
+        android:paddingVertical="@dimen/margin_large"
+        android:layout_marginBottom="@dimen/margin_medium"
+        app:cardMaxElevation="@dimen/margin_medium"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivEmptyImage"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_xxlarge"
+                android:padding="@dimen/margin_medium_3"
+                android:scaleType="centerCrop"
+                android:src="@drawable/delivery" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No ordrs Yet"
+                android:layout_gravity="center"
+                android:textColor="@color/textColor"
+                android:textStyle="bold"
+                android:paddingTop="@dimen/margin_medium_3"
+                android:paddingBottom="@dimen/margin_medium"
+                android:textSize="@dimen/text_heading_2x"
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="You don't have any oredrs yet.Try one of our awesome restaurants and place your first order"
+                android:layout_gravity="center"
+                android:textColor="@color/blue_grey_100"
+                android:maxLines="3"
+                android:paddingBottom="@dimen/margin_large"
+                android:paddingHorizontal="@dimen/margin_xxlarge"
+                android:textSize="@dimen/text_regular"
+
+                />
+<!--            <Button-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/btn_empty_find"-->
+<!--                android:textStyle="bold"-->
+<!--                android:layout_marginTop="@dimen/margin_medium"-->
+<!--                android:background="@drawable/btn_find_background"-->
+<!--                android:padding="@dimen/margin_medium_2"-->
+<!--                android:layout_margin="@dimen/margin_medium_2"/>-->
+
+<!--            <Button-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/btn_reload"-->
+<!--                android:id="@+id/btnReload"-->
+<!--                android:background="@drawable/button_background"-->
+<!--                android:padding="@dimen/margin_medium_2"-->
+<!--                android:textStyle="bold"-->
+<!--                android:layout_marginBottom="@dimen/margin_medium"-->
+<!--                android:layout_marginHorizontal="@dimen/margin_medium_2"/>-->
+
+
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</com.ci6222.fooddelivery.viewholders.EmptyViewPod>

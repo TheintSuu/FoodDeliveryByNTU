@@ -4,6 +4,11 @@
     <item android:id="@+id/nav_home"
         android:title="Restartuants"
         android:icon="@drawable/ic_baseline_home_24"/>
+
+    <item android:id="@+id/nav_order"
+        android:title="Activity"
+        android:icon="@drawable/ic_baseline_article_24"/>
+
     <item android:id="@+id/nav_profile"
         android:title="Account"
         android:icon="@drawable/ic_baseline_person_24"/>
