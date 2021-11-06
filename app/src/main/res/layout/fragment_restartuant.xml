@@ -32,7 +32,7 @@
         <include layout="@layout/search_box_layout" />
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="110dp"
+            android:layout_height="120dp"
             android:padding="@dimen/margin_medium"
             android:paddingBottom="@dimen/margin_medium_2">
 
@@ -64,8 +64,8 @@
                 android:textStyle="bold" />
             <ImageView
                 android:id="@+id/ivMenu"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
                 android:layout_marginEnd="@dimen/margin_medium_2"
                 android:textColor="@color/grey_900"
                 android:layout_alignParentEnd="true"

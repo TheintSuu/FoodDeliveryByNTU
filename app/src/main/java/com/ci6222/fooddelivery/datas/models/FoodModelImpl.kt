@@ -68,6 +68,7 @@ object FoodModelImpl : FoodModel, BaseModel() {
 
 
     override fun addOrUpdateFoodItem(foodItemVO: FoodItemVO) {
+        mFirebaseApi.createOrder()
         mFirebaseApi.addOrUpdateFoodItem(foodItemVO)
     }
 
@@ -75,13 +76,18 @@ object FoodModelImpl : FoodModel, BaseModel() {
         mFirebaseApi.getCartItemCount(onSuccess,onFialure)
     }
 
-    override fun getTotalPrice(onSuccess: (cartCount: Long) -> Unit, onFialure: (String) -> Unit) {
+    override fun getTotalPrice(onSuccess: (cartCount: Double) -> Unit, onFialure: (String) -> Unit) {
         mFirebaseApi.getTotalPrice(onSuccess,onFialure)
     }
 
     override fun removeFoodItem(id: String) {
         mFirebaseApi.deleteFoodItem(id)
     }
+
+    override fun removeCart() {
+        mFirebaseApi.deleteOrder()
+    }
+
 
     @SuppressLint("CheckResult")
     override fun sendDeliveryNotification(notificationVO: NotificationVO, onSuccess: (notiResponse: NotiResponse) -> Unit, onFailure: (String) -> Unit) {

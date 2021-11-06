@@ -37,10 +37,12 @@ interface FoodModel {
 
     fun removeFoodItem(name: String)
 
+    fun removeCart()
+
     fun sendDeliveryNotification(notificationVO: NotificationVO, onSuccess: (notiResponse: NotiResponse) -> Unit, onFailure: (String) -> Unit)
 
     fun getCartItemCount(onSuccess: (cartCount: Long) -> Unit, onFialure: (String) -> Unit)
 
-    fun getTotalPrice(onSuccess: (cartCount: Long) -> Unit, onFialure: (String) -> Unit)
+    fun getTotalPrice(onSuccess: (cartCount: Double) -> Unit, onFialure: (String) -> Unit)
 
 }

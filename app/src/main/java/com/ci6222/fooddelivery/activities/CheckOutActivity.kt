@@ -133,9 +133,11 @@ class CheckOutActivity : BaseActivity(), CheckOutView {
         mAdapter.setData(orderList as MutableList<FoodItemVO>)
     }
 
-    override fun showCalculationCharge(totalPrice: Long) {
-
-        tv_total_Amount.text = "${totalPrice} $"
+    override fun showCalculationCharge(totalPrice: Double) {
+        val price =  String.format("%.2f", totalPrice)
+        tv_total_Amount.text = "${price} $"
 
     }
+
+
 }

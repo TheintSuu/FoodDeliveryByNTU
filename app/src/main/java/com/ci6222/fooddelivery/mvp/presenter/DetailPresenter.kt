@@ -10,7 +10,7 @@ interface DetailPresenter  : BasePresenter<DetailView>,
     DetailViewItemActionDelegate,
     PopularChoiceDeatilViewItemActionDelegate {
 
-
+    fun onBackMain()
     fun onUiReady(context: Context, lifecycleOwner: LifecycleOwner)
     fun onRestaurantReceived(context: Context, lifecycleOwner: LifecycleOwner, documentId : String)
 

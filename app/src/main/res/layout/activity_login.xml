@@ -36,6 +36,7 @@
             android:background="@drawable/rounded_button_white"
             android:hint="Password"
             android:padding="10dp"
+            android:inputType="textPassword"
             android:id="@+id/etPassword"
             android:layout_margin="10dp"/>
         <androidx.appcompat.widget.AppCompatButton

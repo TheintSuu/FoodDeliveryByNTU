@@ -69,7 +69,7 @@ class CheckOutPresenterImpl  : CheckOutPresenter, AbstractBasePresenter<CheckOut
 
     override fun onTapIncreaseAddToCartItem(foodItemVO: FoodItemVO) {
         var itemCount = foodItemVO.itemCount.toLong()
-        var itemPrice = foodItemVO.food_price.toLong()
+        var itemPrice = foodItemVO.food_price.toDouble()
         if(itemCount>0)
         {
             itemCount++
@@ -95,7 +95,7 @@ class CheckOutPresenterImpl  : CheckOutPresenter, AbstractBasePresenter<CheckOut
 
     override fun onTapDecreaseAddToCartItem(foodItemVO: FoodItemVO) {
         var itemCount = foodItemVO.itemCount.toLong()
-        var itemPrice = foodItemVO.food_price.toLong()
+        var itemPrice = foodItemVO.food_price.toDouble()
         if(itemCount>1)
         {
             itemCount--

@@ -5,5 +5,7 @@ class RestaurantVO(
         var description: String? = "",
         var image_Url: String? = "",
         var name: String? = "",
+        var time : String? = "",
+        var location : String ?= "",
         var rating: String? = ""
 )

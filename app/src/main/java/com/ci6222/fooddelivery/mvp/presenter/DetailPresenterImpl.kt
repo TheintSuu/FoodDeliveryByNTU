@@ -13,15 +13,20 @@ class DetailPresenterImpl : DetailPresenter, AbstractBasePresenter<DetailView>()
 
     private val foodDeliveryModel : FoodModel = FoodModelImpl
 
+    var foodList = arrayListOf<FoodItemVO>()
+
+
+
+
     override fun onUiReady(context: Context, owner: LifecycleOwner) {
         sendEventsToFirebaseAnalytics(context, SCREEN_DETAIL)
-        foodDeliveryModel.getCartItemCount(
-            onSuccess = {
-                mView?.showViewCartCount(it)
-            },
-            onFialure = {
-                mView?.showError(it)
-            })
+//        foodDeliveryModel.getCartItemCount(
+//            onSuccess = {
+//                mView?.showViewCartCount(it, false)
+//            },
+//            onFialure = {
+//                mView?.showError(it)
+//            })
     }
 
     override fun onTapAddToCartAction(data: FoodItemVO) {
@@ -33,7 +38,8 @@ class DetailPresenterImpl : DetailPresenter, AbstractBasePresenter<DetailView>()
 
         foodDeliveryModel.getCartItemCount(
             onSuccess = {
-                mView?.showViewCartCount(it)
+
+                mView?.showViewCartCount(it, true)
             },
             onFialure = {
                 mView?.showError(it)
@@ -60,4 +66,8 @@ class DetailPresenterImpl : DetailPresenter, AbstractBasePresenter<DetailView>()
     }
 
     override fun onTapPopularChoiceDelegateAction() {}
+
+    override fun onBackMain() {
+        //foodDeliveryModel.removeCart()
+    }
 }

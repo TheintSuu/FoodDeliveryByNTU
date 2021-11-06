@@ -10,6 +10,7 @@ import com.ci6222.fooddelivery.fragments.ActivityFragment
 import com.ci6222.fooddelivery.fragments.ProfileFragment
 import com.ci6222.fooddelivery.fragments.RestaurantFragment
 import com.ci6222.fooddelivery.utilities.FRAGMENT_Home
+import com.google.firebase.dynamiclinks.FirebaseDynamicLinks
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -26,6 +27,8 @@ class MainActivity : BaseActivity() {
         setContentView(R.layout.activity_main)
         callFragment(RestaurantFragment.newInstance("a", "b"))
         setUpBottomNavigation()
+
+
     }
 
 
@@ -60,4 +63,6 @@ class MainActivity : BaseActivity() {
             replace(R.id.container, fragment)
             .addToBackStack(FRAGMENT_Home).commit()
     }
+
+
 }

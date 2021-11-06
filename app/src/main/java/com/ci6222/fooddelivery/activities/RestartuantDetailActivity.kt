@@ -15,7 +15,9 @@ import com.ci6222.fooddelivery.utilities.showImageWithoutCrop
 import com.example.fooddeliveryapp.adapters.DetailAdapter
 import com.example.fooddeliveryapp.adapters.PopularChoiceDetailAdapter
 import kotlinx.android.synthetic.main.activity_restartuant_detail.*
+import kotlinx.android.synthetic.main.activity_restartuant_detail.detail_category_type
 import kotlinx.android.synthetic.main.content_scrolling.*
+import kotlinx.android.synthetic.main.view_holder_popular_rest.*
 
 class RestartuantDetailActivity : BaseActivity() , DetailView {
 
@@ -24,6 +26,7 @@ class RestartuantDetailActivity : BaseActivity() , DetailView {
     private lateinit var mPopularChoiceDetailAdapter: PopularChoiceDetailAdapter
     private lateinit var mRestaurantVO: RestaurantVO
      var documentID  : String = ""
+     var startCart = false
 
     companion object {
         const val PARM_DOCUMENTID = "Document ID"
@@ -57,6 +60,7 @@ class RestartuantDetailActivity : BaseActivity() , DetailView {
 
         }
         toolbar.setOnClickListener {
+            mPresenter.onBackMain()
             this.finish()
         }
     }
@@ -85,6 +89,7 @@ class RestartuantDetailActivity : BaseActivity() , DetailView {
         mRestaurantVO =restaurantVO
         detail_description.text =restaurantVO?.description
         tv_detail_rating.text =restaurantVO?.rating
+        detail_category_type.text =restaurantVO?.time
         tv_detail_title.text =restaurantVO?.name
         restaurantVO?.image_Url?.let{
             showImageWithoutCrop(detail_image,it)
@@ -99,14 +104,14 @@ class RestartuantDetailActivity : BaseActivity() , DetailView {
         mDetailAdapter.setData(foodList as MutableList<FoodItemVO>)
     }
 
-    override fun showViewCartCount(cartCount: Long) {
-        if(cartCount>0)
-        {
-            btn_viewcart.visibility= View.VISIBLE
-            btn_viewcart.text="View Cart ${cartCount} items"
-        }else{
-            btn_viewcart.visibility= View.GONE
-        }
+    override fun showViewCartCount(cartCount: Long, start : Boolean) {
+        if(cartCount>0 &&  start)
+            {
+                btn_viewcart.visibility= View.VISIBLE
+                btn_viewcart.text="View Cart ${cartCount} items"
+            }else{
+                btn_viewcart.visibility= View.GONE
+            }
     }
 
 

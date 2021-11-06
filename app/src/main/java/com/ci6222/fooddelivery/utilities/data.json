@@ -1,0 +1,488 @@
+{
+  "restaurants": [
+    {
+      "id": 0,
+      "name": "Candlenut",
+      "description": "Cafe Western Food $$",
+      "image_Url": "https://www.google.com/url?sa=i&url=https%3A%2F%2Findulgentism.com%2Ffood-reviews%2Fcandlenut-singapore-michelin-star-peranakan%2F&psig=AOvVaw2vWYDxg3riueB90a0ie9fs&ust=1635925667989000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCKjt48-l-fMCFQAAAAAdAAAAABAs",
+      "rating": "4.9(613 rating)",
+      "subCollection": {
+        "fooditems": [
+          {
+            "food_name": "Ikan Assam Pedas",
+            "food_image": "https://therantingpanda.files.wordpress.com/2014/08/img_7305.jpg",
+            "food_price": 30,
+            "food_description": "Fillet cooked in a spicy tangy gravy with baby okra",
+            "popular": true,
+            "food_rating": 4.4,
+            "itemCount": 1
+          },
+          {
+            "food_name": "Babi Buah Keluak",
+            "food_image": "https://sethlui.com/wp-content/uploads/2015/03/candlenut-peranakan-singapore-1604.jpg",
+            "food_price": 26,
+            "food_description": "Dry caramelised curry cooked over 4 hours",
+            "popular": false,
+            "food_rating": 4.3,
+            "itemCount": 1
+          },
+          {
+            "food_name": "Bakwan Kepiting Soup",
+            "food_image": "https://firebasestorage.googleapis.com/v0/b/food-delivery-app-3b717.appspot.com/o/images%2FYOCHA%20KOMBUCHA.jpg?alt=media&token=feeb6bcf-8ae0-4f36-bc8e-19834cba0e40",
+            "food_price": 16,
+            "food_description": "Blue Swimmer crab chicken balls",
+            "popular": true,
+            "food_rating": 4.6,
+            "itemCount": 1
+          },
+          {
+            "food_name": "Nyonya Hokkien Mee",
+            "food_image": "https://media-cdn.tripadvisor.com/media/photo-s/1b/38/67/97/candlenut.jpg",
+            "food_price": 34,
+            "food_description": "Egg noodles braised with tau cheo",
+            "popular": true,
+            "food_rating": 4.6,
+            "itemCount": 1
+          },
+          {
+            "food_name": "Assam Sotong Hitam",
+            "food_image": "https://www.8days.sg/blob/14633594/f6cdea762ce217ce24d2c80525441290/candlenut-red-braised-margaret-river-angus-beef-short-rib-data.jpg",
+            "food_price": 28,
+            "food_description": "Baby squid stir fry with squid ink",
+            "popular": true,
+            "food_rating": 4.1,
+            "itemCount": 1
+          },
+          {
+            "food_name": "Candlenut's Buah Keluak Fried Price",
+            "food_image": "https://www.theworlds50best.com/discovery/filestore/jpg/Candlenut-Singapore-Singapore-01.jpg",
+            "food_price": 68,
+            "food_description": "Fired with buah keluak sambal",
+            "popular": true,
+            "food_rating": 4.8,
+            "itemCount": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": 1,
+      "name": " McDonald's (NTU) ",
+      "description": "Fast Food Halal $$",
+      "image_Url": "https://www.mcdelivery.com.sg/sg/static/1635507900605/assets/65/img/mcdelivery_logo_en.jpg",
+      "rating": "4.6/5(1603 rating)",
+      "subCollection": {
+        "fooditems": [
+          {
+            "food_name": "Breakfast Wrap Sausage Meal",
+            "food_description": "A hearty wholegrain tortilla wrap filled with a chicken sausage, scrambled eggs, cheese, a crispy hashbrown and tomato ketchup",
+            "food_price": 7,
+            "food_image": "https://www.mcdelivery.com.sg/sg/static/1635775714231/assets/65/products/711116.png?",
+            "popular": true,
+            "food_rating": 4.6,
+            "itemCount": 1
+          },
+          {
+            "food_name": "Scrambled Egg Burger with Sausge Extra Value Meal",
+            "food_image": "https://www.mcdelivery.com.sg/sg/static/1635775714231/assets/65/products/710016.png?",
+            "food_price": 6.40,
+            "food_description": "Tender chicken patty is back! With soft buns and fluffy scrambled eggs, it’s delight in every bite.",
+            "popular": true,
+            "food_rating": 4.1,
+            "itemCount": 1
+          },
+          {
+            "food_name": "Chicken Ham Extra Value Meal",
+            "food_image": "https://www.mcdelivery.com.sg/sg/static/1635775714231/assets/65/products/710008.png?",
+            "food_price": 6.90,
+            "food_description": "A popular favourite: Savoury chicken sausage, round egg and cheese between toasted muffins.",
+            "popular": true,
+            "food_rating": 4.3,
+            "itemCount": 1
+          },
+          {
+            "food_name": "McCafe Mocha Frappe",
+            "food_image": "https://www.mcdelivery.com.sg/sg/static/1635775714231/assets/65/products/505030.png?",
+            "food_price": 4.45,
+            "food_description": "Withc rich chocolate fudge glazed onto a creamy soft-serve, our Hot fudge",
+            "popular": false,
+            "food_rating": 4.3,
+            "itemCount": 1
+          },
+          {
+            "food_name": "McCafe Latte",
+            "food_image": "https://www.mcdelivery.com.sg/sg/static/1635775714231/assets/65/products/505443.png?",
+            "food_price": 4.30,
+            "food_description": "It is a match made in heaven. A magical medley of sweet strawberry sauce for a fruity brust of sugar",
+            "popular": false,
+            "food_rating": 4.5,
+            "itemCount": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "name": " Toast Box ",
+      "description": "Cafe Food $$",
+      "image_Url": "https://images.deliveryhero.io/image/fd-sg/LH/y6rq-hero.jpg?width=1200&height=300&quality=45",
+      "rating": "4.9(613 rating)",
+      "subCollection": {
+        "fooditems": [
+          {
+            "food_name": "Curry Chicken With Rice",
+            "food_image": "https://toastbox.com.sg/images/2021Updates/07/ToastBox_Curry_Chicken.png",
+            "food_price": 15,
+            "food_description": "A hearty bowl of curry with rice and chicken mid-wings ",
+            "popular": true,
+            "food_rating": 4.1,
+            "itemCount": 1
+          },
+          {
+            "food_name": "LAKSA",
+            "food_image": "https://toastbox.com.sg/images/Signature/signaturelaksanew.jpg",
+            "food_price": 23,
+            "food_description": "Uniquely served with mee tai back and cooked with coconut",
+            "popular": true,
+            "food_rating": 4.4,
+            "itemCount": 1
+          },
+          {
+            "food_name": "Mee Rebus",
+            "food_image": "https://toastbox.com.sg/images/Signature/signaturerebusnew.jpg",
+            "food_price": 15.8,
+            "food_description": "yellow edd noodles served in rich potato-based gravy",
+            "popular": true,
+            "food_rating": 4.3,
+            "itemCount": 1
+          },
+          {
+            "food_name": "Mee SIAM",
+            "food_image": "https://toastbox.com.sg/images/signatures--mee_siam.png",
+            "food_price": 16.8,
+            "food_description": "Savour the tangy and spicy gravy with herbs, noodles and fish cake",
+            "popular": true,
+            "food_rating": 4.3,
+            "itemCount": 1
+          },
+          {
+            "food_name": "Traditional Kaya Toast",
+            "food_image":"https://toastbox.com.sg/images/signatures--toast.png",
+            "food_price": 6.7,
+            "food_description": "A true Sigaprean favourite",
+            "popular": false,
+            "food_rating": 3.8,
+            "itemCount": 1
+          },
+          {
+            "food_name": "Peanut Thick Toast",
+            "food_image": "https://toastbox.com.sg/images/2021Updates/07/Toast_Box_-_Peanut_Thick_Toast.png",
+            "food_price": 6.9,
+            "food_description": "Chomp into the crowd-favourite toast",
+            "popular": false,
+            "food_rating": 3.6,
+            "itemCount": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "name": " Subway(Nanyang CC) ",
+      "description": "Fast Food American$$",
+      "image_Url": "https://images.deliveryhero.io/image/fd-sg/LH/s3wp-hero.jpg?width=1200&height=300&quality=45",
+      "rating": "4.7(4311 rating)",
+      "subCollection": {
+        "fooditems": [
+          {
+            "food_name": "Chicken Ham Sub",
+            "food_image": "https://cdn.foodadvisor.com.sg/3/400/ycqwu/vt-iw/Fhetksji/2552798.zfw/chicken-teriyaki-salad.jpg",
+            "food_price": 6.80,
+            "food_description": "Lean and tender slice chicken nham",
+            "popular": false,
+            "food_rating": 4.3,
+            "itemCount": 1
+          },
+          {
+            "food_name": "Tuna Sub",
+            "food_image": "https://cdn.foodadvisor.com.sg/3/400/ycqwu/vt-iw/Fhetksji/2552808.zfw/chicken-ham-wrap.jpg",
+            "food_price": 7.80,
+            "food_description": "Dophin-safe Tuan and Cream",
+            "popular": true,
+            "food_rating": 4.2,
+            "itemCount": 1
+          },
+          {
+            "food_name": "Chicken Ham Wrap",
+            "food_image": "https://cdn.foodadvisor.com.sg/3/400/ycqwu/vt-iw/Fhetksji/2552841.zfw/spicy-italian-sub.jpg",
+            "food_price": 7.30,
+            "food_description": "Lean and tender sliced chicken ham",
+            "popular": false,
+            "food_rating": 3.6,
+            "itemCount": 1
+          },
+          {
+            "food_name": "Turkey Wrap",
+            "food_image": "https://cdn.foodadvisor.com.sg/3/400/ycqwu/vt-iw/Fhetksji/si6lq-Ikrmqo/l8yq/4389598.zfw/breaded-chicken-cutlet-sub.jpg",
+            "food_price": 7.50,
+            "food_description": "Enjou a Turkey Breast Sub now",
+            "popular": true,
+            "food_rating": 4.1,
+            "itemCount": 1
+          },
+          {
+            "food_name": "Hot Coffee",
+            "food_image": "https://cdn.foodadvisor.com.sg/3/400/ycqwu/vt-iw/Fhetksji/4652407.zfw/mushroom-soup.jpg",
+            "food_price": 3.7,
+            "food_description": "Hot signature Coffee",
+            "popular": false,
+            "food_rating": 3.8,
+            "itemCount": 1
+          },
+          {
+            "food_name": "Coca-Cola",
+            "food_image": "https://cdn.foodadvisor.com.sg/1/400/tccrg/2ss87623p8t32q9pq4541786472/subway-hdb-hub.jpg",
+            "food_price": 3.20,
+            "food_description": "Coca-cola Hot or Ice",
+            "popular": false,
+            "food_rating": 3.9,
+            "itemCount": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "name": " Jia He Seafood ",
+      "description": "Cafe Western Food $$",
+      "image_Url": "https://cdn.foodadvisor.com.sg/3/400/ycqwu/vt-iw/BX/m4on-xuhe.zfw/jia-he-seafood.jpg",
+      "rating": "4.5(3123 rating)",
+      "subCollection": {
+        "fooditems": [
+          {
+            "food_name": "Mr Teg Trauj Seafood",
+            "food_image": "https://cdn.foodadvisor.com.sg/3/250/ycqwu/vt-iw/BX/n7ie-xuhe.zfw/mr-teh-tarik-seafood-pasir-ris-east.jpg",
+            "food_price": 51,
+            "food_description": "Mall Teh Tarik Eating House",
+            "popular": false,
+            "food_rating": 4.1,
+            "itemCount": 1
+          },
+          {
+            "food_name": "Xiang Chun Xiao Chao",
+            "food_image": "https://cdn.foodadvisor.com.sg/3/250/ycqwu/vt-iw/BX/t4ik-xuhe.zfw/xiang-chun-xiao-chao.jpg",
+            "food_price": 69,
+            "food_description": "226F Ang Mo Kio",
+            "popular": true,
+            "food_rating": 43,
+            "itemCount": 1
+          },
+          {
+            "food_name": "Pearl's Kitchen",
+            "food_image": "https://cdn.foodadvisor.com.sg/3/250/ycqwu/vt-iw/BX/w8iy-xuhe.zfw/pearl-s-kitchen.jpg",
+            "food_price": 62,
+            "food_description": "2 Benoi Place",
+            "popular": true,
+            "food_rating": 4.0,
+            "itemCount": 1
+          },
+          {
+            "food_name": "Nature Park Seafood",
+            "food_image": "https://cdn.foodadvisor.com.sg/3/250/ycqwu/vt-iw/BX/n2dj-xuhe.zfw/nature-park-seafood.jpg",
+            "food_price": 58,
+            "food_description": "55 Kim Chuan Dr",
+            "popular": true,
+            "food_rating": 4.3,
+            "itemCount": 1
+          },
+          {
+            "food_name": "Rixin Fish Soup and Noodle",
+            "food_image": "https://cdn.foodadvisor.com.sg/3/250/ycqwu/vt-iw/BX/q6au-xuhe.zfw/rixin-fish-soup-and-noodle.jpg",
+            "food_price": 28,
+            "food_description": "Chinese Restaurants",
+            "popular": false,
+            "food_rating": 4.2,
+            "itemCount": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "name": " Indian House",
+      "description": "Indian Food $$",
+      "image_Url": "https://static.thehoneycombers.com/wp-content/uploads/sites/2/2017/06/Madras-New-Woodlands.jpg",
+      "rating": "4.4(2813 rating)",
+      "subCollection": {
+        "fooditems": [
+          {
+            "food_name": "Amritsari Vegtable Pakora",
+            "food_image": "https://indianfood.com.sg/wp-content/uploads/2021/01/Vegetable-Pakoras-1-300x300.jpg",
+            "food_price": 6,
+            "food_description": "Indian Food Free Delivery",
+            "popular": true,
+            "food_rating": 4.2,
+            "itemCount": 1
+          },
+          {
+            "food_name": "Kathi Roll(Chicken)",
+            "food_image": "https://indianfood.com.sg/wp-content/uploads/2021/01/Kathi-Roll-scaled-1-300x300.jpg",
+            "food_price": 10.9,
+            "food_description": "Indian Food Free Delivery",
+            "popular": true,
+            "food_rating": 4.7,
+            "itemCount": 1
+          },
+          {
+            "food_name": "Vegetable Samosa",
+            "food_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRfkKW6pBRU5hruzaQxBUH8rAR0pAB4NbmWHg&usqp=CAU",
+            "food_price": 5,
+            "food_description": "Indian Food Free Delivery",
+            "popular": true,
+            "food_rating": 4.3,
+            "itemCount": 1
+          },
+          {
+            "food_name": "Kdathi Roll(Paneeer)",
+            "food_image": "https://indianfood.com.sg/wp-content/uploads/2021/01/paneer-kathi-roll-300x300.jpg",
+            "food_price": 9.9,
+            "food_description": "Indian Food Free Delivery",
+            "popular": true,
+            "food_rating": 3.9,
+            "itemCount": 1
+          },
+          {
+            "food_name": "Paneer Pakora",
+            "food_image": "https://indianfood.com.sg/wp-content/uploads/2021/01/Paneer-Pakora-300x300.jpg",
+            "food_price": 9.90,
+            "food_description": "Indian Food Free Delivery",
+            "popular": false,
+            "food_rating": 3.8,
+            "itemCount": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "name": " Gong Cha  ",
+      "description": "Beverages Tea & Coffee Bubble Tea",
+      "image_Url": "https://images.deliveryhero.io/image/fd-sg/LH/x0mp-hero.jpg?width=1200&height=300&quality=45",
+      "rating": "4.9(258 rating)",
+      "subCollection": {
+        "fooditems": [
+          {
+            "food_name": "Earl Grey Milk Tea",
+            "food_image": "http://www.gong-cha-sg.com/wp-content/uploads/2017/11/0009_%E5%A5%B6%E7%83%8F-Oolong-Milk-Tea.png",
+            "food_price": 3.6,
+            "food_description": "A combination of peach and milk",
+            "popular": true,
+            "food_rating": 4.1,
+            "itemCount": 1
+          },
+          {
+            "food_name": "Brown Sugar Lover",
+            "food_image": "http://www.gong-cha-sg.com/wp-content/uploads/2020/07/Brown-Sugar-Fresh-MIlk-Tea-with-Pearl.png",
+            "food_price": 4.6,
+            "food_description": "Calling all brown sugar lover",
+            "popular": true,
+            "food_rating": 4.6,
+            "itemCount": 1
+          },
+          {
+            "food_name": "Calpis Triple Peach",
+            "food_image": "http://www.gong-cha-sg.com/wp-content/uploads/2020/07/Strawberry-Taro-Latte.png",
+            "food_price": 4.60,
+            "food_description": "All time fan-favourites",
+            "popular": true,
+            "food_rating": 4.2,
+            "itemCount": 1
+          },
+          {
+            "food_name": "Golden Avocado",
+            "food_image": "https://www.emilieeats.com/wp-content/uploads/2015/12/Banana_Mango_Avocado_Green_Smoothie_3_edit.jpg",
+            "food_price": 5.8,
+            "food_description": "Creamy avocado with gula melake",
+            "popular": true,
+            "food_rating": 3.6,
+            "itemCount": 1
+          },
+          {
+            "food_name": "Surise CoitemCount",
+            "food_image": "http://www.gong-cha-sg.com/wp-content/uploads/2017/11/%E5%A5%B6%E8%93%8B%E9%BB%91%E6%A3%AE%E6%9E%97-Milk-Foam-Black-Forest.png",
+            "food_price": 5.3,
+            "food_description": "The most refreshing coconut with the king of summer fruit",
+            "popular": true,
+            "food_rating": 4.3,
+            "itemCount": 1
+          },
+          {
+            "food_name": "Macha Green Tea",
+            "food_image": "hhttp://www.gong-cha-sg.com/wp-content/uploads/2017/11/%E5%AE%87%E6%B2%BB%E9%87%91%E6%99%82%E5%A5%B6%E8%8C%B6-Matcha-w-Red-Bean.png",
+            "food_price": 6.4,
+            "food_description": "Combination of  sugar pearl fresh with green tea",
+            "popular": true,
+            "food_rating": 4.8,
+            "itemCount": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "name": " Royal Thai ",
+      "description": "Asian Thai Rice Dishes $$",
+      "image_Url": "https://images.deliveryhero.io/image/fd-sg/LH/x0zb-hero.jpg?width=1200&height=300&quality=45",
+      "rating": "4.9(613 rating)",
+      "subCollection": {
+        "fooditems": [
+          {
+            "food_name": "Tom Yum Soup Thick",
+            "food_image": "https://www.flowermoundyummythai.com/wp-content/uploads/2019/02/Top-7-Most-Popular-Thai-Foods.jpg",
+            "food_price": 7.80,
+            "food_description": "Yummy Thai Flower Mound Texas",
+            "popular": true,
+            "food_rating": 4.7,
+            "itemCount": 1
+          },
+          {
+            "food_name": "Claypot Giant Prawns Tang Hoon",
+            "food_image": "https://www.foodadvisor.my/attachments/a05dbc948807db766bb45a576b4ec2a6548d04e4/store/fill/800/500/6b21f7537132a36045b11da05aaaf8b9da3632b3738072d257365123f7eb/featured_image.jpg",
+            "food_price": 21.8,
+            "food_description": "Combination of prawn with coconut",
+            "popular": true,
+            "food_rating": 4.1,
+            "itemCount": 1
+          },
+          {
+            "food_name": "Thai Fried Rice with Prawns",
+            "food_image": "https://www.bangkokairblog.com/wp-content/uploads/2017/10/OG-imagetom-yum-goong.jpg",
+            "food_price": 9.8,
+            "food_description": "Ryde District Mums",
+            "popular": true,
+            "food_rating": 4.3,
+            "itemCount": 1
+          },
+          {
+            "food_name": "Phad Thai Noodles with Prawns",
+            "food_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRfkKW6pBRU5hruzaQxBUH8rAR0pAB4NbmWHg&usqp=CAU",
+            "food_price": 16,
+            "food_description": "Noodles With Prawns",
+            "popular": false,
+            "food_rating": 4.6,
+            "itemCount": 1
+          },
+          {
+            "food_name": "Thai Style Hor Fun with Beef",
+            "food_image": "https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/8975232949087/The%2520Local%2520by%2520Oamthong%2520Thai%2520Cuisine%2520Vouchers-f3f6d3b0-05a9-4992-88a6-3a4ccaae0c80.jpeg?tr=q-60,c-at_max,w-720,h-1280&_src=imagekit",
+            "food_price": 57.9,
+            "food_description": "The local Oamthong Thai Cuisine",
+            "popular": true,
+            "food_rating": 4.8,
+            "itemCount": 1
+          }
+        ]
+      }
+    }
+  ]
+}
